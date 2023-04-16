@@ -1,0 +1,19 @@
+FROM python:3.10
+
+WORKDIR /python-api
+
+COPY ./python-api/requirements.txt /python-api/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /python-api/requirements.txt
+
+COPY ./python-api/load_model.py /python-api/load_model.py
+
+RUN python /python-api/load_model.py
+
+COPY ./python-api/app /python-api/app
+
+COPY ./python-api/db /python-api/db
+
+COPY ./md-to-prompt/out /md-to-prompt/out
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
