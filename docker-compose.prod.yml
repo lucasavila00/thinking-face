@@ -24,7 +24,7 @@ services:
       - "./traefik-public-certificates:/certificates"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.dashboard.rule=Host(`dashboard.hosting.builders`) && (PathPrefix(`/`)"
+      - "traefik.http.routers.dashboard.rule=Host(`dashboard.hosting.builders`)"
       - "traefik.http.routers.dashboard.tls=true"
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dashboard.service=api@internal"
