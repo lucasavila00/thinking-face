@@ -42,7 +42,15 @@ function rehypeShiki() {
 export const rehypePlugins = [
   mdxAnnotations.rehype,
   rehypeSlug,
-  [rehypeAutolinkHeadings, { behavior: 'wrap', test: ['h2'] }],
+  [
+    rehypeAutolinkHeadings,
+    {
+      behavior: 'wrap',
+      test: [
+        // 'h2'
+      ],
+    },
+  ],
   rehypeShiki,
   [
     remarkRehypeWrap,

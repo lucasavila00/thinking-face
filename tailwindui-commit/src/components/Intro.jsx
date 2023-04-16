@@ -49,24 +49,20 @@ export function Intro() {
         </Link>
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-        Open-source Git client{' '}
-        <span className="text-sky-300">for macOS minimalists</span>
+        Using Markdown? Upgrade Your Search with Our{' '}
+        <span className="text-sky-300">AI-Powered Self-Hosted Engine</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        Commit is a lightweight Git client you can open from anywhere any time
-        you’re ready to commit your work with a single keyboard shortcut. It’s
-        fast, beautiful, and completely unnecessary.
+        Revolutionize Your Search Experience with Our Free, AI-Powered
+        Self-Hosted Search Engine - Unleash the Full Potential of Your Data!
       </p>
       <SignUpForm />
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-        <IconLink href="#" icon={BookIcon} className="flex-none">
+        {/* <IconLink href="#" icon={BookIcon} className="flex-none">
           Documentation
-        </IconLink>
+        </IconLink> */}
         <IconLink href="#" icon={GitHubIcon} className="flex-none">
           GitHub
-        </IconLink>
-        <IconLink href="/rss/feed.xml" icon={FeedIcon} className="flex-none">
-          RSS
         </IconLink>
       </div>
     </>
@@ -77,8 +73,13 @@ export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
       Brought to you by{' '}
-      <IconLink href="#" icon={TwitterIcon} compact large>
-        Joe Davola
+      <IconLink
+        href="https://twitter.com/lucasavila00"
+        icon={TwitterIcon}
+        compact
+        large
+      >
+        Lucas Ávila
       </IconLink>
     </p>
   )

@@ -3,8 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { useFeed } from '@/components/FeedProvider'
-import { FormattedDate } from '@/components/FormattedDate'
+// import { FormattedDate } from '@/components/FormattedDate'
 
 export const a = Link
 
@@ -13,12 +12,6 @@ export const wrapper = function Wrapper({ children }) {
 }
 
 export const h2 = function H2(props) {
-  let { isFeed } = useFeed()
-
-  if (isFeed) {
-    return null
-  }
-
   return <h2 {...props} />
 }
 
@@ -52,34 +45,34 @@ function ContentWrapper({ className, children }) {
   )
 }
 
-function ArticleHeader({ id, date }) {
-  return (
-    <header className="relative mb-10 xl:mb-0">
-      <div className="pointer-events-none absolute left-[max(-0.5rem,calc(50%-18.625rem))] top-0 z-50 flex h-4 items-center justify-end gap-x-2 lg:left-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] xl:h-8">
-        <Link href={`#${id}`} className="inline-flex">
-          <FormattedDate
-            date={date}
-            className="hidden xl:pointer-events-auto xl:block xl:text-2xs/4 xl:font-medium xl:text-white/50"
-          />
-        </Link>
-        <div className="h-[0.0625rem] w-3.5 bg-gray-400 lg:-mr-3.5 xl:mr-0 xl:bg-gray-300" />
-      </div>
-      <ContentWrapper>
-        <div className="flex">
-          <Link href={`#${id}`} className="inline-flex">
-            <FormattedDate
-              date={date}
-              className="text-2xs/4 font-medium text-gray-500 dark:text-white/50 xl:hidden"
-            />
-          </Link>
-        </div>
-      </ContentWrapper>
-    </header>
-  )
-}
+// function ArticleHeader({ id, date }) {
+//   return (
+//     <header className="relative mb-10 xl:mb-0">
+//       <div className="pointer-events-none absolute left-[max(-0.5rem,calc(50%-18.625rem))] top-0 z-50 flex h-4 items-center justify-end gap-x-2 lg:left-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] xl:h-8">
+//         <Link href={`#${id}`} className="inline-flex">
+//           <FormattedDate
+//             date={date}
+//             className="hidden xl:pointer-events-auto xl:block xl:text-2xs/4 xl:font-medium xl:text-white/50"
+//           />
+//         </Link>
+//         <div className="h-[0.0625rem] w-3.5 bg-gray-400 lg:-mr-3.5 xl:mr-0 xl:bg-gray-300" />
+//       </div>
+//       <ContentWrapper>
+//         <div className="flex">
+//           <Link href={`#${id}`} className="inline-flex">
+//             <FormattedDate
+//               date={date}
+//               className="text-2xs/4 font-medium text-gray-500 dark:text-white/50 xl:hidden"
+//             />
+//           </Link>
+//         </div>
+//       </ContentWrapper>
+//     </header>
+//   )
+// }
 
 export const article = function Article({ id, title, date, children }) {
-  let { isFeed } = useFeed()
+  // let { isFeed } = useFeed()
   let heightRef = useRef()
   let [heightAdjustment, setHeightAdjustment] = useState(0)
 
@@ -97,19 +90,19 @@ export const article = function Article({ id, title, date, children }) {
     }
   }, [])
 
-  if (isFeed) {
-    return (
-      <article>
-        <script
-          type="text/metadata"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({ id, title, date }),
-          }}
-        />
-        {children}
-      </article>
-    )
-  }
+  // if (isFeed) {
+  //   return (
+  //     <article>
+  //       <script
+  //         type="text/metadata"
+  //         dangerouslySetInnerHTML={{
+  //           __html: JSON.stringify({ id, title, date }),
+  //         }}
+  //       />
+  //       {children}
+  //     </article>
+  //   )
+  // }
 
   return (
     <article
@@ -118,7 +111,7 @@ export const article = function Article({ id, title, date, children }) {
       style={{ paddingBottom: `${heightAdjustment}px` }}
     >
       <div ref={heightRef}>
-        <ArticleHeader id={id} date={date} />
+        {/* <ArticleHeader id={id} date={date} /> */}
         <ContentWrapper className="typography">{children}</ContentWrapper>
       </div>
     </article>

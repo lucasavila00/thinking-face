@@ -1,5 +1,10 @@
-# can it be deployed to render.com if open ai is used?
+# TODO
 
-# do open ai embedding require a different prompt?
+- [ ] name & logo
 
-# should it use open ai?
+- [ ] domain
+
+- [ ] vercel deployment?
+
+- [ ] email backend
+
