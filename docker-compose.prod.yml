@@ -29,7 +29,7 @@ services:
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.middlewares=auth"
-      - "traefik.http.middlewares.auth.basicauth.users=${USERNAME}:${HASHED_PASSWORD}"
+      - "traefik.http.middlewares.auth.basicauth.users=lucas:$$2y$$05$$4360fzQSIf4GwoskzpMrvOYuL2wqOF0eQ7J8pB9cbRNgOjCKECBvS"
 
 volumes:
   traefik-public-certificates:
