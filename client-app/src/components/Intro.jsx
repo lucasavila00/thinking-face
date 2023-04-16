@@ -49,8 +49,8 @@ export function Intro() {
         </Link>
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-        Using Markdown? Upgrade Your Search with Our{' '}
-        <span className="text-sky-300">AI-Powered Self-Hosted Engine</span>
+        Upgrade Your Search with{' '}
+        <span className="text-sky-300">Self-Hosted AI</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
         Revolutionize Your Search Experience with Our Free, AI-Powered

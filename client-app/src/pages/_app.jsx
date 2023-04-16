@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>ThinkingFace🤔 - Open-source & self-hosted AI search</title>
+        <title>ThinkingFace - Self-Hosted AI Search</title>
         <meta
           name="description"
           content="Revolutionize Your Search Experience with Our Free, AI-Powered Self-Hosted Search Engine - Unleash the Full Potential of Your Data!"
