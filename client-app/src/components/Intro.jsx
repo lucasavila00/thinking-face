@@ -56,12 +56,25 @@ export function Intro() {
         Revolutionize Your Search Experience with Our Free, AI-Powered
         Self-Hosted Search Engine - Unleash the Full Potential of Your Data!
       </p>
-      <SignUpForm />
+      <div className="relative isolate mt-8 flex items-center pr-1">
+        <a
+          href="https://lucasavila.substack.com/?r=8s3ld&utm_campaign=pub&utm_medium=web"
+          className="w-full rounded-md bg-white/10 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-white/20"
+        >
+          Discover More and Stay in the Loop - Click Here!
+        </a>
+      </div>
+      {/* <SignUpForm /> */}
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         {/* <IconLink href="#" icon={BookIcon} className="flex-none">
           Documentation
         </IconLink> */}
-        <IconLink href="#" icon={GitHubIcon} className="flex-none">
+        <IconLink
+          href="https://github.com/lucasavila00/thinking-face"
+          target="_blank"
+          icon={GitHubIcon}
+          className="flex-none"
+        >
           GitHub
         </IconLink>
       </div>
