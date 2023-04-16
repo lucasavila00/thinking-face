@@ -1,10 +1,9 @@
 # TODO
 
-- [ ] name & logo
-
-- [ ] domain
-
 - [ ] vercel deployment?
 
 - [ ] email backend
 
+- [ ] github link
+
+- [ ] search loading

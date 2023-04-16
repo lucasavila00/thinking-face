@@ -4,16 +4,13 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import clsx from 'clsx'
 
-const DEV_URL = 'http://fastapi.localhost:8008/query/react'
-const PROD_URL = 'https://api.hosting.builders/query/react'
-
 const useFetchData = () => {
   const [isLoading, setLoading] = useState(false)
   const [results, setResults] = useState([])
 
   const fetchData = async (text) => {
     setLoading(true)
-    const data = await fetch(DEV_URL, {
+    const data = await fetch(process.env.NEXT_PUBLIC_API_URL, {
       method: 'POST',
       body: JSON.stringify({
         text,
@@ -32,17 +29,15 @@ const useFetchData = () => {
         setLoading(false)
       })
 
-    const items = data.items
-
-    const itemsWithHtml = await Promise.all(
-      items.map((item) =>
+    const items = await Promise.all(
+      data.items.map((item) =>
         remark()
           .use(html)
           .process(item.content)
           .then((r) => ({ ...item, htmlContent: r.value }))
       )
     )
-    setResults(itemsWithHtml)
+    setResults(items)
   }
   return {
     isLoading,
