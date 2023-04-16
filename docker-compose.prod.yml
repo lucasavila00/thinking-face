@@ -1,4 +1,5 @@
 version: '3.8'
+env_file: .env
 
 services:
   web:
@@ -29,7 +30,7 @@ services:
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.middlewares=auth"
-      - "traefik.http.middlewares.auth.basicauth.usersfile=/etc/traefik/usersFile"
+      - "traefik.http.middlewares.auth.basicauth.users=${USERLIST}"
 
 volumes:
   traefik-public-certificates:
