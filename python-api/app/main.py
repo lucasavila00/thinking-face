@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
     "http://localhost:3000",
-    "https://thinking-face.vercel.app"
+    "https://thinking-face.vercel.app",
     "http://thinking-face.vercel.app"
 ]
 
